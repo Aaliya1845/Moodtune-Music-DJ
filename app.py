@@ -1,3 +1,4 @@
+%%writefile app.py
 
 import streamlit as st
 import pandas as pd
@@ -13,42 +14,12 @@ st.set_page_config(layout="wide")
 # --- Load Data and Models ---
 
 # Songs DataFrame
-songs_data = [
-    ["happy", "Hindi", "Romantic", "Kesariya", "Arijit Singh", "https://youtu.be/BddP6PYo2gs"],
-    ["happy", "Hindi", "Romantic", "Raatan Lambiyan", "Jubin Nautiyal", "https://youtu.be/gvyUuxdRdR4"],
-    ["happy", "Hindi", "Feel Good", "Ilahi", "Arijit Singh", "https://youtu.be/fdubeMFwuGs"],
-    ["happy", "Hindi", "Party", "Kar Gayi Chull", "Badshah", "https://youtu.be/NTHz9ephYTw"],
-    ["happy", "Hindi", "Motivational", "Kar Har Maidaan Fateh", "Sukhwinder Singh", "https://youtu.be/KJxS6XHkYlQ"],
-    ["happy", "Punjabi", "Pop", "Lover", "Diljit Dosanjh", "https://youtu.be/DP8TlBLPc8A"],
-    ["happy", "Punjabi", "Pop", "GOAT", "Diljit Dosanjh", "https://youtu.be/cl0a3i2wFcc"],
-    ["happy", "English", "Pop", "Happy", "Pharrell Williams", "https://youtu.be/ZbZSe6N_BXs"],
-    ["happy", "Punjabi", "Party", "Laembadgini", "Diljit Dosanjh", "https://youtu.be/placeholder5"],
-
-    ["sad", "Hindi", "Emotional", "Channa Mereya", "Arijit Singh", "https://youtu.be/284Ov7ysmfA"],
-    ["sad", "Hindi", "Emotional", "Agar Tum Saath Ho", "Alka Yagnik", "https://youtu.be/sK7riqg2mr4"],
-    ["sad", "Hindi", "Emotional", "Tujhe Bhula Diya", "Mohit Chauhan", "https://youtu.be/vM0xQkG3N2I"],
-    ["sad", "Hindi", "Soft", "Khairiyat", "Arijit Singh", "https://youtu.be/hoNb6HuNmU0"],
-    ["sad", "Hindi", "Emotional", "Phir Bhi Tumko Chaahunga", "Arijit Singh", "https://youtu.be/_iktURk0X-A"],
-    ["sad", "Punjabi", "Emotional", "Qismat", "Ammy Virk", "https://youtu.be/jF2fztq2YcQ"],
-    ["sad", "Punjabi", "Emotional", "Soch", "Harrdy Sandhu", "https://youtu.be/rRr1qiJRsXk"],
-    ["sad", "English", "Emotional", "Someone Like You", "Adele", "https://youtu.be/hLQl3WQQoQ0"],
-
-    ["angry", "Hindi", "Rock", "Zinda", "Siddharth Mahadevan", "https://youtu.be/Awkx1jXgGZE"],
-    ["angry", "Punjabi", "Party", "Born To Shine", "Diljit Dosanjh", "https://youtu.be/dCmp56tSSmA"],
-    ["angry", "English", "Rock", "Believer", "Imagine Dragons", "https://youtu.be/7wtfhZwyrcc"],
-
-    ["neutral", "Hindi", "Romantic", "Raabta", "Arijit Singh", "https://youtu.be/zlt38OOqwDc"],
-    ["neutral", "Hindi", "Soft", "Apna Bana Le", "Arijit Singh", "https://youtu.be/ElZfdU54Cp8"],
-    ["neutral", "Hindi", "Soft", "Tum Se Hi", "Mohit Chauhan", "https://youtu.be/mt9xg0mmt28"],
-    ["neutral", "Hindi", "Romantic", "Hawayein", "Arijit Singh", "https://youtu.be/cYOB941gyXI"],
-    ["neutral", "Punjabi", "Pop", "Excuses", "AP Dhillon", "https://youtu.be/vX2cDW8LUWk"],
-    ["neutral", "English", "Romantic", "Perfect", "Ed Sheeran", "https://youtu.be/2Vv-BfVoq4g"]
-]
-
-df = pd.DataFrame(
-    songs_data,
-    columns=["emotion", "language", "genre", "song", "artist", "youtube"]
-)
+SONGS_FILE = "songs.csv"
+if os.path.exists(SONGS_FILE):
+    df = pd.read_csv(SONGS_FILE)
+else:
+    st.error(f"Error: {SONGS_FILE} not found. Please ensure it's in the same directory as app.py.")
+    st.stop() # Stop the Streamlit app if the data file is missing
 
 # Emotion Classifier (Hugging Face Transformers)
 @st.cache_resource
@@ -96,14 +67,13 @@ def recommend_songs(emotion, language="All", genre="All", n=5):
 
     st.subheader(f"Recommended Songs for {emotion.capitalize()} Mood:")
     for _, row in rec.iterrows():
-        st.markdown(f"### ðŸŽµ {row['song']} - {row['artist']}")
+        st.markdown(f"### 🎵 {row['song']} - {row['artist']}")
         st.write(f"Language: {row['language']}")
         st.write(f"Genre: {row['genre']}")
         st.markdown(f"[Listen on YouTube]({row['youtube']})")
-        st.markdown("--- Say that you love me. --- ")
 
 # --- Streamlit UI ---
-st.title("ðŸŽ¶ Emotion-Based Song Recommender")
+st.title("🎶 Emotion-Based Song Recommender")
 st.markdown("Upload an image, audio, or enter text to get song recommendations based on your detected emotion.")
 
 # Emotion detection options
@@ -156,6 +126,8 @@ with st.spinner('Processing...'):
 
             if st.button("Analyze Audio Emotion"):
                 try:
+                    # For pydub to work correctly, 'ffmpeg' must be installed on the system where the app is deployed.
+                    # Streamlit Cloud typically has ffmpeg pre-installed.
                     # Convert to WAV if m4a
                     if audio_path.endswith(".m4a"):
                         wav_path = "temp_audio.wav"
@@ -187,6 +159,7 @@ with st.spinner('Processing...'):
 
 # --- Song Recommendation Filters ---
 st.sidebar.markdown("## Filter Recommendations")
+st.sidebar.info(f"Current Emotion for Recommendations: {predicted_emotion.capitalize()}")
 language_choice = st.sidebar.selectbox(
     "Select Language:",
     ("All", "Hindi", "Punjabi", "English"),
