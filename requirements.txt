@@ -1,0 +1,10 @@
+streamlit
+transformers
+torch
+pandas
+deepface
+opencv-python-headless
+SpeechRecognition
+pydub
+tf-keras
+Pillow

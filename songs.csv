@@ -1,0 +1,51 @@
+emotion,language,genre,song,artist,youtube
+happy,Hindi,Romantic,Kesariya,Arijit Singh,https://youtu.be/BddP6PYo2gs
+happy,Hindi,Romantic,Raatan Lambiyan,Jubin Nautiyal,https://youtu.be/gvyUuxdRdR4
+happy,Hindi,Feel Good,Ilahi,Arijit Singh,https://youtu.be/fdubeMFwuGs
+happy,Hindi,Party,Kar Gayi Chull,Badshah,https://youtu.be/NTHz9ephYTw
+happy,Hindi,Motivational,Kar Har Maidaan Fateh,Sukhwinder Singh,https://youtu.be/KJxS6XHkYlQ
+happy,Punjabi,Pop,Lover,Diljit Dosanjh,https://youtu.be/DP8TlBLPc8A
+happy,Punjabi,Pop,GOAT,Diljit Dosanjh,https://youtu.be/cl0a3i2wFcc
+happy,Punjabi,Pop,Excuses,AP Dhillon,https://youtu.be/vX2cDW8LUWk
+happy,Punjabi,Pop,Brown Munde,AP Dhillon,https://youtu.be/VNs_cCtdbPc
+happy,Punjabi,Party,Born To Shine,Diljit Dosanjh,https://youtu.be/dCmp56tSSmA
+happy,English,Pop,Happy,Pharrell Williams,https://youtu.be/ZbZSe6N_BXs
+happy,English,Pop,Blinding Lights,The Weeknd,https://youtu.be/4NRXx6U8ABQ
+sad,Hindi,Emotional,Channa Mereya,Arijit Singh,https://youtu.be/284Ov7ysmfA
+sad,Hindi,Emotional,Agar Tum Saath Ho,Alka Yagnik,https://youtu.be/sK7riqg2mr4
+sad,Hindi,Emotional,Phir Bhi Tumko Chaahunga,Arijit Singh,https://youtu.be/_iktURk0X-A
+sad,Hindi,Emotional,Tujhe Bhula Diya,Mohit Chauhan,https://youtu.be/vM0xQkG3N2I
+sad,Hindi,Soft,Khairiyat,Arijit Singh,https://youtu.be/hoNb6HuNmU0
+sad,Punjabi,Emotional,Qismat,Ammy Virk,https://youtu.be/jF2fztq2YcQ
+sad,Punjabi,Emotional,Soch,Harrdy Sandhu,https://youtu.be/rRr1qiJRsXk
+sad,Punjabi,Soft,Mann Bharrya,B Praak,https://youtu.be/hMy5za-m5Ew
+sad,Punjabi,Soft,Kismat Badal Di,Ammy Virk,https://youtu.be/placeholder1
+sad,English,Soft,Someone Like You,Adele,https://youtu.be/hLQl3WQQoQ0
+sad,English,Soft,Let Her Go,Passenger,https://youtu.be/RBumgq5yVrA
+sad,English,Soft,Fix You,Coldplay,https://youtu.be/k4V3Mo61fJM
+angry,Hindi,Motivational,Zinda,Siddharth Mahadevan,https://youtu.be/Awkx1jXgGZE
+angry,Hindi,Rock,Sultan,Sukhwinder Singh,https://youtu.be/wPxqcq6Byq0
+angry,Hindi,Motivational,Lakshya,Shankar Mahadevan,https://youtu.be/8DMF0U6x8aI
+angry,Punjabi,Rap,295,Sidhu Moose Wala,https://youtu.be/uA2fkrpK5vA
+angry,Punjabi,Pop,Born To Shine,Diljit Dosanjh,https://youtu.be/dCmp56tSSmA
+angry,Punjabi,Rap,Old Skool,Sidhu Moose Wala,https://youtu.be/placeholder2
+angry,English,Rock,Believer,Imagine Dragons,https://youtu.be/7wtfhZwyrcc
+angry,English,Rock,Warriors,Imagine Dragons,https://youtu.be/fmI_Ndrxy14
+neutral,Hindi,Romantic,Raabta,Arijit Singh,https://youtu.be/zlt38OOqwDc
+neutral,Hindi,Soft,Tum Se Hi,Mohit Chauhan,https://youtu.be/mt9xg0mmt28
+neutral,Hindi,Romantic,Hawayein,Arijit Singh,https://youtu.be/cYOB941gyXI
+neutral,Hindi,Soft,Apna Bana Le,Arijit Singh,https://youtu.be/ElZfdU54Cp8
+neutral,Punjabi,Pop,Excuses,AP Dhillon,https://youtu.be/vX2cDW8LUWk
+neutral,Punjabi,Soft,Insane,AP Dhillon,https://youtu.be/placeholder3
+neutral,Punjabi,Pop,With You,AP Dhillon,https://youtu.be/placeholder4
+neutral,English,Pop,Perfect,Ed Sheeran,https://youtu.be/2Vv-BfVoq4g
+neutral,English,Pop,Photograph,Ed Sheeran,https://youtu.be/nSDgHBxUbVQ
+surprise,Hindi,Party,Malang,Ved Sharma,https://youtu.be/KBIq11mNB0I
+surprise,Hindi,Dance,Ghungroo,Arijit Singh,https://youtu.be/qFkNATtc3mc
+surprise,Punjabi,Party,High Rated Gabru,Guru Randhawa,https://youtu.be/Ttv9l6-3iAk
+surprise,Punjabi,Party,Naah,Harrdy Sandhu,https://youtu.be/8qs2dZO6wcc
+surprise,English,Pop,Blinding Lights,The Weeknd,https://youtu.be/4NRXx6U8ABQ
+surprise,English,Pop,Shape of You,Ed Sheeran,https://youtu.be/JGwWNGJdvx8
+happy,Hindi,Party,Kala Chashma,Badshah,https://youtu.be/k4yXQkG2s1E
+happy,Punjabi,Party,Laembadgini,Diljit Dosanjh,https://youtu.be/placeholder5
+neutral,English,Soft,Counting Stars,OneRepublic,https://youtu.be/hT_nvWreIhg
