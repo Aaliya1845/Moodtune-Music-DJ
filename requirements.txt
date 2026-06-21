@@ -1,9 +1,4 @@
 streamlit
 pandas
-transformers
-torch
-deepface
-opencv-python-headless
 SpeechRecognition
 pydub
-tf-keras
